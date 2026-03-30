@@ -1,0 +1,37 @@
+<%- include('partials/head.ejs') %>
+<div class="container">
+    <h1>The Solar System</h1>
+    <%- include('partials/nav.ejs') %>
+
+    
+<h2><%= planetName %></h2>
+
+<img src="<%= planetInfo.image %>" alt="<%= planetName %>">
+
+<p><%= planetInfo.description %></p>
+
+<% if (planetInfo.distanceFromSun) { %>
+    <p><strong>Distance from Sun:</strong> <%= planetInfo.distanceFromSun %></p>
+<% } %>
+
+<% if (planetInfo.yearLength) { %>
+    <p><strong>Year Length:</strong> <%= planetInfo.yearLength %></p>
+<% } %>
+
+<% if (planetInfo.radius) { %>
+    <p><strong>Radius:</strong> <%= planetInfo.radius %> miles</p>
+<% } %>
+
+<% if (planetInfo.moons !== undefined) { %>
+    <p><strong>Moons:</strong> <%= planetInfo.moons %></p>
+<% } %>
+
+<% if (planetInfo.websiteLink) { %>
+    <p><a href="<%= planetInfo.websiteLink %>" target="_blank">Learn more</a></p>
+<% } %>
+
+<%- include('partials/footer.ejs') %>
+</div>
+
+</body>
+</html>

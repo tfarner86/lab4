@@ -1,0 +1,28 @@
+<%- include('partials/head.ejs') %>
+<div class="container">
+    <h1>The Solar System</h1>
+    <%- include('partials/nav.ejs') %>
+
+    <h1>NASA Astronomy Picture of the Day</h1>
+
+
+<% if (error) { %>
+    <p><%= error %></p>
+<% } else { %>
+    <h2><%= title %></h2>
+    <p><strong>Date:</strong> <%= date %></p>
+
+    <img src="<%= image %>" alt="<%= title %>" style="max-width: 100%; height: auto;">
+
+    <p><%= explanation %></p>
+
+    <% if (copyright) { %>
+        <p><em>© <%= copyright %></em></p>
+    <% } %>
+<% } %>
+</div>
+
+
+
+</body>
+</html>
